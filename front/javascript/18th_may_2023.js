@@ -148,3 +148,59 @@ function newfuc(a,b,...c){//(...c)-> this is called rest paramet.
     // console.log(`d is ${d}`);
 }
 newfuc(1,2,3,4,5);
+
+//form a function which can give the sum of all the parameter 
+// in a given function.
+
+const sumofalltype=(...a)=>{
+    let ans=0;
+    for(let num of a){
+        ans+=num;
+    }
+    return ans;
+}
+let sumall=sumofalltype(1,2,3,4,10);
+console.log(sumall);
+
+// parameter destructting.
+
+const person={
+    name:"sahib",
+    age:"21",
+};//created an object.
+
+function propofperson(obj)//properties of the person function.
+{
+    console.log(obj.name);
+    console.log(obj.age);
+    console.log(obj.height)//this height key is not present.
+    // so this will give undefined.
+}
+
+//doing above task using concept of destructing.
+
+function propofperson1({name:n,age:a,height:h}){//this is called 
+    //parameter destructuring.
+    console.log(`${n}\n${a}\n${h}`);//here h will give
+    //undefined.
+}
+propofperson1(person);
+
+// CALLBACK FUNCTION.
+// means calling of some function being inside of another function.
+// by accepting the parameter of some function into the function in
+// which we currenlty in.
+
+const okfun1=(num2)=>{
+    console.log("insdie okfun1");
+    console.log(num2*10);
+    console.log("finish");
+}
+
+const okfun2=(CALLBACK,num1)=>{
+    console.log("inside okfun2");
+    let a=5*num1;
+    CALLBACK(a);//this is similar to okfun1(a);
+}
+
+okfun2(okfun1,2);
