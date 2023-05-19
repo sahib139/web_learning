@@ -203,4 +203,6 @@ const okfun2=(CALLBACK,num1)=>{
     CALLBACK(a);//this is similar to okfun1(a);
 }
 
+// calling of function form inside another function.
 okfun2(okfun1,2);
+    
