@@ -194,3 +194,17 @@ objj.test();
 // }
 // obj_obj.obj.inside_obj(); --> can find out why this prints window object as well .
 //Let's check in further moving on.
+
+//note ->
+
+// const objj={
+//     test:()=>{
+//         console.log(this);//window object will be printed.
+//     }
+// }
+//we can also write above function like this;
+// const objj={
+//      test():{
+//          console.log("this");
+//      }
+// }
