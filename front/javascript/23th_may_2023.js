@@ -94,3 +94,93 @@ createUser.prototype.sing=function(){
 
 const user_final=createUser("sahib","singh","cant@give.sorry",21,"can't_say");
 console.log(user_final.about());
+
+//new keyword.
+//  1)empty object is created {}===this
+//  2)return this object.
+//  Object.create(createUser.prototype) -> this also done by new keyword.(__proto__ --> createUser.prototype.)
+
+const obj_new=function(first_name,last_name){
+    this.first_name=first_name;
+    this.last_name=last_name;
+}
+obj_new.prototype.about=function(){
+    console.log(`Full name is ${this.first_name} ${this.last_name}`);
+};
+//now when we create object using obj_new fucntion by following manner.
+const obj1=new obj_new("sahib","singh");//this create a object 
+//here new keyword work in following manner.
+//first goes to obj_new function -> then create this = Object.create(this.prototype)(object). -> then make mention keys and add it's value ->
+// then return this(object). 
+// we can see this obj_new function in following manner.
+
+// const obj_new=function(first_name,last_name){
+//     this=Object.create(this.prototype); ------> this line is added by new keyword.
+//     this.first_name=first_name;
+//     this.last_name=last_name;
+//     return this; ------> this line is also added by new keyword.
+// }
+
+console.log(obj1.first_name);// prints sahib 
+obj1.about()// prints sahib singh
+
+// Now we can modify creatUser function in more advance form.
+// Note ---> according to javascript convention when we use new keyword to create any object .
+// we use first letter of the function as capital.
+
+const CreateUser=function(first_name,last_name,email,age ,address){
+    this.first_name=first_name;
+    this.last_name=last_name;
+    this.email=email;
+    this.age=age;
+    this.address=address;
+}
+CreateUser.prototype.about=function(){
+    return `${this.first_name} is ${this.age} years old.Email is ${this.email} and address is ${this.address}`;
+}
+CreateUser.prototype.is18=function(){
+    return this.age >= 18;
+}
+CreateUser.prototype.sing=function(){
+    return "lallal";
+}
+
+const user1=new CreateUser("abc","pqr","ok@notok.end",0,"okay_i_don't_know");
+console.log(user1.first_name);
+console.log(user1.about());
+
+//Since,we can print all the keys of the object by for in loop.
+for(let key in user1){
+    console.log(key);//but this also prints the __proto__ key/fucntion.
+}
+//To avoid printing the key/function form __proto__ we can object function ---> hasOwnProperty(key) (take key as parameter).
+// if the key passed to user function hasOwnProperty then it return boolean value . True when key is present in the
+//object itself and false when key is present in the object but present in the __proto__ (linked object).
+
+for(let key in user1){
+    if(user1.hasOwnProperty(key)){
+        console.log(`${key}--> this is present in the object.`);
+    }else{
+        console.log(`${key}--> this is not present in the object.`);
+    }
+}
+
+//   MORE ABOUT PROTOTYPE.
+const arr=[1,2,3];//we can decleared the array .
+const arr1=new Array(1,2); //we can declared array like this by using new keyword.
+//now we can understand that all the array function are stored in the prototype of Array.(like push ,pop)
+console.log(Object.getPrototypeOf(arr1));//prints the same as --> console.log(Array.prototype);
+console.log(Array.prototype);//this prints the the object which contain all the methods of Array function.
+//but we can see that ther object is converted into array.
+
+//i.e. array is prototype is printed which contains all the Array function.
+// we clear this dobut by knowing that we can convert the object into array.
+
+const hello1=function(){
+    console.log("YO");
+}
+console.log(hello1.prototype);//this prints prototype in object form.
+// now we can covert this object form prototype into array type prototype.
+hello1.prototype=[];
+console.log(hello1.prototype);
+hello1();
