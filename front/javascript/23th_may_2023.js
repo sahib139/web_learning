@@ -183,4 +183,4 @@ console.log(hello1.prototype);//this prints prototype in object form.
 // now we can covert this object form prototype into array type prototype.
 hello1.prototype=[];
 console.log(hello1.prototype);
-hello1();
+hello1();//in this way Array function declares it object prototype into array type prototype.
