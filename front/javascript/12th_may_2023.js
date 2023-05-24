@@ -4,11 +4,11 @@ let num1=6;
 let num2=num1;
 num1++;
 //on increasing the num1 value , num2 value don't increases
-// beacause firslt they are decleared in stacked memory.
-// and they denotes different memory location .
+// beacause first they are decleared in stacked memory.
+// and they points to different memory location .
 console.log(num1,num2);
 
-//But it is not same with refrence type.
+//But it is not same with reference type.
 //reference datatypes
 let array1=[1,2,3];
 let array2=array1;
@@ -22,10 +22,10 @@ array1.push(4);//on adding the new element in array1.
 console.log(array1);
 console.log(array2);
 
-//METHOD -1 -->
 // So how to clone an array.
+//METHOD -1 -->
 let array3=array1.slice(0);// here we are doing slicing of 
-//array1 in 0 to array1.length.
+//array1 from 0 to array1.length.
 // this creates a new array and then store these slide elements
 // in it.
 array3.push(5);
@@ -33,7 +33,7 @@ console.log(array3,array2);
 
 //METHOD -2-->
 let array4=[].concat(array3);
-// we can alsoe do able step by step i.e. 
+// we can also do above code step by step i.e. 
 //1->let array4=[];
 //2->array4.concat(array3);
 array4.push(16);
@@ -52,12 +52,12 @@ for(let i=0;i<array3.length;i++){
 //use const for creating array.
 
 let arr1=[1,2,3,4];
-arr1=[3,4,5,6];//in this way someone can change our array.
+arr1=[3,4,5,6];//in this way someone is able to change our array.
 //using same variable we cange pointer 
 
-// but is we use const instead of let in arr1
-// after declear a array it get fixed with a perticular 
-//pointer(address) . Now we change any it will be corrosponding 
+// but if we use const instead of let in arr1
+// after declearing a array it get fixed with a perticular 
+//pointer(address) . Now if we change any thing in ;it will be corrosponding 
 //to that location only.
 
 const arr2=['OK1','ok1','oK1'];
@@ -71,7 +71,7 @@ console.log(arr2);
 
 const fruits=['banana','mango','orange'];
 
-for(let fruit of fruits) // --> similar to -> for(auto fruit:fruits)
+for(let fruit of fruits) // --> similar to -> for(auto fruit:fruits) in c++.
 {
     console.log(fruit);
 }
@@ -80,7 +80,7 @@ for(let fruit of fruits) // --> similar to -> for(auto fruit:fruits)
 //->this gives the index of the elements of array , one by one
 
 for(let i in fruits){
-    console.log(i);
+    console.log(i);// 0 ,1 ,2 
 }
 
 // array destructing 
@@ -98,9 +98,9 @@ console.log(var3,var4);
 
 // we also using slicing in this.
 let [val1,val2]=myarray.slice(2);
-console.log(val1,val2);
+console.log(val1,val2);//33,44
 
-//if myarray have less value then ve give variable to assign them value.
+//if myarray have less value as compair tp given no. of variable to assign them value.
 //then undefine value get saved in the variable.
 //example.
 const newarr=['ok'];

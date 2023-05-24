@@ -18,11 +18,11 @@ console.log(typeof age1,age1);
 
 //if ,else if ,else.
 if(age1<=5){
-    console.log("Abhi baccha hai tu.");
+    console.log("You are a small child");
 }else if(age1<18){
-    console.log("Thoda aur bada ho ja.");
+    console.log("Please apply latter ater growing more.");
 }else{
-    console.log("chal aja ab vote dena");
+    console.log("Now you can go for vote.");
 }
 
 //tenary operator -> work as if-else.
@@ -82,7 +82,7 @@ for(let j=0;j<=5;j++){
 }
 // note here in for loop , since we declare i variable in for loop 
 // using let keyword , so we cannot use i outside for loop.
-// but is use (var) to declare i insted of let.
+// but is use (var) to declare i insted of using let.
 // then we will be able to use i variable outside the for
 // loop block.
 

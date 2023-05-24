@@ -1,4 +1,4 @@
-let first_name;// in this variable e don't assign any value to it. so this variable will be of undefine type.
+let first_name;// in this variable we don't assign any value to it. so this variable will be of undefine type.
 console.log(typeof first_name);
 
 let ok1=null;
@@ -29,4 +29,3 @@ console.log(n1!==n2)// give true since data type is different.
 
 console.log(num1>=n1);//gives true
 console.log(num2<=n2);//gives false
-

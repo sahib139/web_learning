@@ -45,7 +45,7 @@ const pi = 22/7;
 console.log(pi);
 
 // string indexing 
-// In java string indexing also start form 0 to n-1 similar to c,c++.
+// In javascript string indexing also start form 0 to n-1 similar to c,c++.
 // to print value at any index we use sq bracker
 
 let str="sahib singh";
@@ -53,7 +53,7 @@ console.log(str[4]); //print value at index 4 of str string
 
 //string is immutable.
 let st="testing string function";
-// string finction -->
+// string function -->
 // 1- length function->
 console.log(st.length);
 
@@ -87,8 +87,8 @@ console.log(st.slice(1));//-> will print the string from index 1 to last index.
 
 let age= 20;
 let str1="1100";
-console.log(typeof age);
-console.log(typeof str1); 
+console.log(typeof age);// typeof prints the data type of frther mention variable. Here age --> number.
+console.log(typeof str1); //here str--> string.
 
 // to convert a string to number or number to string we do by->
 // age = String(age);
@@ -98,7 +98,7 @@ console.log(typeof str1);
 
 // we can also do the conversion by->
 // to convert a number to string we simply have to add a 
-// empty string in the end to the no.
+// empty string in the end of the no.
 age = age + "";
 console.log(typeof age);
 
@@ -110,7 +110,7 @@ console.log(typeof str1);
 // example
 let string1="10";
 let string2="11";
-let name1=string1 + string2 //this will concatinate the string
+let name1=string1 + string2 //this will concatenate the string
 let sum= +string1 + +string2; // "10" is converted into 10 and
 // "11" is converted into 11;
 // sum have a number which is equal to (11+10)=21;

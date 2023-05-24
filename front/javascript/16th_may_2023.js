@@ -1,6 +1,6 @@
 // objects 
 // these are reference type
-// these are se to save data
+// these are use to save data
 // array are not sufficient for real world data.
 
 //creation of object 
@@ -18,8 +18,8 @@ const car={
     "cost":20,
 };
 console.log(car);
-//here indexing is not use .we use to key insted.
-console.log(person.name);
+//here indexing is not use ;we use key insted to access it's value.
+console.log(person.name);//we use dot to access key's value.
 console.log(car.cost);
 
 //NOTE-> key is also know as object properties.
@@ -29,7 +29,7 @@ const student={
 };
 // person={
 //     hobbie:["cricket","table tennis"]
-// };--> this will give error because of const.
+// };--> this will give error because of const. --> We have decleared person object in above lines.
 
 //to add new key value pair in existing object. 
 //method 1->
@@ -39,13 +39,13 @@ console.log(person);
 person['height']=171;
 console.log(person);
 
-// Hence, object has two types of notation bracket and dot.
+// Hence, object has two types of notation --->> ((bracket/[])) and (((dot/.))).
 
 console.log(person.height,person['height']);//both gives same value.
 
 //difference between dot and bracket notation.
 // if we wanted to add a key which has more then one word.
-//then we cannot use dot notation because in that we 
+// We cannot use dot notation in this situation because in dot notation 
 // we don't use inverted commas.
 // so here bracket notations are required.
 
@@ -60,20 +60,20 @@ console.log(person);
 // same concept is use while declearing a new object.
 
 const college={
-    'college name':'CHUTIYA COLLEGE'//here we cant write
-    // college name:'chutiya college'.
+    'college name':'OK OK'//here we can write like this.
+    // college name:'OK OK'.
 };
 
-// now if we wanted to give key name which is saves in a varibale.
+// now if we wanted to give key name which is saves in some other varibale.
 
 const new_key_name='email id';
-person["new_key_name"]='cutiya@ok.com';
+person["new_key_name"]='ok_ok@ok.com';
 console.log(person);
-// in this person get a new key named as ->'new_key_name'
-// but we wanted it's value i.e. email id
-// so we not don't use inverted commans while entering key_variable name.
+// in this person object ;a new key is created --> named as ->'new_key_name'
+// but we wanted it's value i.e. email id --> To become the key name.
+// so we don't have to use inverted commans while entering key_variable name.
 
-college[new_key_name]='cutiya@college.com';
+college[new_key_name]='okok@college.com';//like this.
 console.log(college);
 
 //how to iterate in object
@@ -140,15 +140,15 @@ console.log(obj1);
 const arr1=[1,2,3];
 const arr2=[2,3,4];
 const newarr=[...arr1,...arr2,4,5];
-console.log(newarr);
+console.log(newarr);//[1,2,3,2,4,5,4,5];
 
 //(...)->we can use spread operator in any datatype which can
 // be iterarated.
 const okletsee=[..."12345"];
-console.log(okletsee);
+console.log(okletsee);//[1,2,3,4,5];
 
-//note -> if we use same key more then one time in the 
-//creating or declearing the object ; then the last value 
+//note -> if we use same key more then one time in 
+//creating or declearing the object ; --> the last value 
 // which we enter in the key is subjected to key :value pair.
 
 const testing={
@@ -156,7 +156,7 @@ const testing={
     key2:'val2',
     key1:'val3'
 };
-console.log(testing);// in this key1 has value val3.
+console.log(testing);// in this key1, has value--> val3.
 
 //spread operator in ojects.
 const newobj={
@@ -175,4 +175,3 @@ const test2={
     ...['it1','it2']
 };
 console.log(test2)//{0:'it1',1:'it2'};
-
