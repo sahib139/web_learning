@@ -20,12 +20,13 @@ const hello_duplicate=func();//hello() function get stored in
 hello_duplicate();//here we calling the hello_duplicate which
 //is also a hello() function.
 // if hello function is returning some value then we directly
-// print the value i.e. console.log(hello_duplicate);
+// print the value i.e. console.log(hello_duplicate());
 //or we can save that value in some varibale i.e. 
 // let value =hello_duplicate();
 
 //importing array method.
-//for
+
+// (((forEach)))
 
 const num=[1,2,3,4,5];
 
@@ -37,7 +38,7 @@ for(let i=0;i<num.length;i++){
     func1(num[i],i);
 }
 
-num.forEach(func1);//this work similar to above work.
+num.forEach(func1);//this work similar to above fucntion(func1).
 //forEach function of array takes function as an input .
 //a callback function.
 //this function perform its working according to given 
@@ -45,8 +46,8 @@ num.forEach(func1);//this work similar to above work.
 //forEach function pass index and the element at that index 
 //to callback function.
 
-//eg--> for doing summizion in the array of all elements;
-let sum=0;
+//eg--> for doing summision of all array elements;
+let sum;
 const sums=(num,idx)=>{
     if(idx==0)sum=0;
     sum+=num;
@@ -63,7 +64,7 @@ num.forEach(function(num){
 });
 //array number multiplication by 3 ; by using anonymous function.
 
-//we use this for each function in object properties accessing.
+//we use this forEach METHOD in object properties accessing.
 //eg->
 const users=[
     {first_name:"ac",age:21},
@@ -79,8 +80,8 @@ users.forEach(user=>console.log(user.first_name));
 //but since forEach is oldest function and many programmers
 //use it , so we should know this function.
 
-// (((MAP METHOD)))
-//array method.
+// (((MAP METHOD)))  ---->array method.
+
 //this function also take the callback function.
 //but this always return the value corresponding to all 
 //iteration of the array.
@@ -101,6 +102,7 @@ console.log(ages);//all array elements have undefined
 //value.
 
 //((((filter)))) function -->
+
 //this also take a callback function
 //it should always return boolean value .i.e. true or false
 //this function filters the value which and stored in array which 
@@ -119,13 +121,15 @@ const oddnumber=numerics.filter(num=>num%2!=0);
 console.log(oddnumber);
 
 //((reduce)) method ->>
+
 //reduce method also takes the callback function.
 //it return the single value;
 //eg->
 
 const arr=[1,2,3,4,5];
 
-let sumarr=arr.reduce((accumulator,currentvalue)=>{
+let sumarr=arr.reduce((accumulator,currentvalue)=>{// let sumarr = arr.reduce(callback_fcnction()) -> return a single value
+                                                    // which saves in sumarr variable.
     return accumulator+currentvalue;
 });
 console.log(sumarr);

@@ -12,17 +12,17 @@ const {ok}=person;//here since their is no indexing . so
 //person object.
 // since no 'ok' name key is their. so their is no value 
 console.log(ok);
-//corrosponding value to it . Thats's why we get undefine.
+//corrosponding value to it . Thats's why we get undefined.
 
 const {name}=person;//here we have 'name' key in person .
 //so name also also become variable to store 'name' key value.
-console.log(name);
+console.log(name);//"sahib"
 
 //if we wanted to change the variable name (not same as key).
 const {name:your_name,age:your_life_height}=person;//we can also use let.
 // console.log(age); --> this will error now . since no variable
 //name 'age' is define.
-console.log(your_name,your_life_height);
+console.log(your_name,your_life_height);//sahib , 21 .
 
 let {name:fname,...rest_prop}=person;
 console.log(fname);
@@ -49,21 +49,21 @@ const [user1,user2]=users;
 console.log(user1);
 
 const[{User_id:id1,firstName:name1},,user3]=users;
-console.log(id1,name1,user3);
+console.log(id1,name1,user3);// 1 ,'abc' , {User_id:3,firstName:'hij',gender:'male'} .
 
-//function declearation.
+//function declaration.
 
 function sayownername(){
-    console.log("SAHIB SINGH\n");
+    console.log("SAHIB SINGH\n"); //---> '\n' --> denoted the new line character.
 }
 sayownername();
 
 // function sum(num1,num2){//num1,num2->parameters
-//     return num1+num2;
+//     return num1+num2; 
 // }
 
 // let ans=sum(5,4);//5,4->arguments
-// console.log(ans);
+// console.log(ans); // 9
 
 //taking array as parameter
 // finding element in array and if not found return -1.
@@ -73,7 +73,7 @@ function findvalue(array,find){
     for(let i =0;i<array.length;i++){
         if(array[i]===find){
             let_see=i;
-            break;
+            break;//we be reading further.
         }
     }
     return let_see;
@@ -108,7 +108,7 @@ const sum=function(num1,num2){
 const sqofno= (num1)=> {
     return num1*num1;
 } // -> method (3) -> ((ARROW FUNCTION)).
-//note -> if we have only one parameter then it's
+//note -> if we have only and only one parameter then it's not
 //neccessory to use () , we can only write parameter i.e.
 // num1 without sq_bracket.
 // this only works when we have one parameter.
@@ -118,7 +118,7 @@ const cubeofno= num1 =>{
 }
 //we can also write above function in form->
 //  const cubeofno = num1 => num1*num1*num1;
-//without using {} and return .
+//without using () and return .
 
 //ex->
 const iseven = value => value%2 ===0;
@@ -131,7 +131,6 @@ const sayhello = () => {
 // const sayhello= () => console.log("I said hey!"); ->same as above
 
 
-const sum_of_two_no= (val1,val2) => val1+val2;
+const sum_of_two_no= (val1,val2) => val1+val2;// return keyword is not neccessory when we have 
+//only one statement ot execute.
 console.log(sum_of_two_no(5,9));
-
-

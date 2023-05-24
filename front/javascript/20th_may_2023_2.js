@@ -11,7 +11,7 @@ for(let char of name1){
 const arr=[1,2,'sahib'];
 for(let element of arr){
     console.log(element);
-}//-> array isiterable.
+}//-> array is iterable.
 
 
 //non-iterable objects.
@@ -75,7 +75,7 @@ console.log(unique_element);
 const mp1=new Map();//way to create a empty map.
 
 mp1.set(0,[]);//set function of map is used to add key:value to map.
-//here key value is stored in the map in form of array of of size 2. 
+//here key value is stored in the map in form of array . 
 mp1.set(1,[]);
 
 console.log(mp1.get(0));//get function is used to obtain the value at that key.
@@ -86,10 +86,10 @@ const array1=[1,2,3,4,10,13,15,16,28];
 //finding the even odd no in array1 and saving in mp1.
 for(let num of array1){
     mp1.get(num%2).push(num);//here mp.get(num%2) -> return the value of key (num%2). which is the array 
-    // of even odd no.
+    // of even /odd no.
 }
 
-//Since their is no indexing in map , so we can access sing tradition for loop which uses
+//Since their is no indexing in map , so we can not access using tradition for loop which uses
 //length function.
 //But we can use for of loop to access every [key,value] array from map.
 
@@ -103,7 +103,7 @@ const mp2=new Map([['name','Sahib'],['age',21]]);//by passing array of array -> 
 const keeys=mp2.keys();//return the array of keys.
 console.log(keeys);
 
-// eg- > we uses map to store some extra info related of our user obj wehich we don't want to store 
+// eg- > we uses map to store some extra info related of our user obj which we don't want to store 
 //in user_info object.
 const user_info={
     'id':121,
@@ -148,15 +148,15 @@ console.log(home.culture)//there is no such key . so we don't know it's value , 
 
 //now ->
 console.log(home.detail);//this return the value of detail key which is also a object.
-console.log(home.detail.area)//here we accessing the area key of detial object which itself
+console.log(home.detail.area)//here we accessing the area key of detail object which itself
 //the key of home object.
 //return 'new area'.
 
 // -->  console.log(home.culture.are_no)          //their is no such key of detial object .
-
 //this return the error.
+
 //but in above case (line:146) return undefined.
-//is we want to get undefined value if their is no such key is present .
+//if we want to get undefined value when their is no such key is present .
 //then optional chaining is required.
 //here we add '?' while using '.' operator to access the value of the key.
 //this '?' signifies that if that certian key is present then return it's value.

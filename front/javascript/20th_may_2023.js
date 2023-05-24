@@ -6,7 +6,7 @@ arr.sort();
 //this sort function sort by firstly converting the no into
 //the string and then comparing them in lexicographic order.
 // arr=['23','21','321','5','43','675','2','76'];
-//no this array is sorted in lexicographic order in 
+// this array is sorted in lexicographic order in 
 //compair ascci values .
 console.log(arr);
 
@@ -65,7 +65,7 @@ console.log(desired_user);
 //doing operation on each element according to callback
 //fucntion.
 
-//eg -> to check that the given array elemets have same parity 
+//eg -> to check that the given array elemets have same parity (here even no.)
 //or not.
 
 const arr2=[12,2,4,6,10];
@@ -116,13 +116,12 @@ check=products.some(({price})=>price>60000);
 console.log(check);//gives false.
 
 //(((fill))) method -->
-//it helps to fill the value desired value in the array.
+
+//it helps to fill the desired value in the array.
 //we can pass initial value to our new array using fill
 //method as well.
 //eg-> creating array of 10 size and filling it 0 value.
 const my_new_array=new Array(10).fill(0);
-//here we can also use like this->
-//const my_new_array=Array(10).fill(0);
 console.log(my_new_array);
 
 //value , start , end -> three parameter we can pass in array.
@@ -134,7 +133,7 @@ console.log(my_new_array);
 //if we pass two parameter , then it will replace all the 
 // value starting from index given in second parameter to last index
 //with the value mention in first parameter.
-my_new_array.fill(4,3);
+my_new_array.fill(4,3);// replace 4 from idex 4 to 9.
 console.log(my_new_array);
 
 //if we pass all the three parameter then first parameter 
@@ -164,7 +163,7 @@ numbi.splice(1,2);
 console.log(numbi);//[1, 3, 7, 9]
 
 //inserting
-numbi.splice(2,0,10,11,12);
+numbi.splice(2,0,10,11,12);//delete 0 elements from index 2 and add 10,11,12 form index 2.
 console.log(numbi);//[1, 3, 10, 11, 12, 7, 9]
 
 //deleting and inserting the elements

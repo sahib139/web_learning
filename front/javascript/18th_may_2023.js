@@ -1,4 +1,4 @@
-//hoisting 
+//  HOIESTING 
 
 hello();
 function hello(){
@@ -16,6 +16,8 @@ function hello(){
 
 //isodd(); ->this will also give error.
 // const isodd= num1 => num1%2===0;
+
+// WE WILL LEARNING MORE ABOUT HOISTING ; AS WE MOVE FURTHER.
 
 //function inside function.
 
@@ -50,11 +52,15 @@ const mainfunc=function(){
         // now check in mainfunc -> not found.
         // now check in global space -> found ok2.
     }
-    func1();
-    func2();
-    func3();
+    func1();// "yo"
+    func2();// 0
+    func3();// 1
 }
 mainfunc();
+// "yo"
+// 0
+// 1
+
 
 // <-- block scope vs function scope -->
 //let and const are block scope 
@@ -71,17 +77,18 @@ mainfunc();
 
 // console.log(a); //--> this will give error.
 // console.log(b); --> this also give error.
-//this is the concept of block scope.
+//this is the concept of ((((block scope)))).
 
 // this variable decleared using let and const stays 
 // inside the block.
 
-//but is decleared using var then we can access it anywhere
+//but if it is decleared using var then we can access it anywhere
 // in our code . we can considered var as global variable.
 
 {
     var ok=1;
 }
+console.log(ok);// use ok of above block.
 {
     console.log(ok);// use ok of above block.
     var ok=2;
@@ -91,7 +98,7 @@ mainfunc();
 
 // DEFAULT PARAMETERS ->
 
-// when default parameter concept is not come.
+// when default parameter concept is not developed.
 // we use to overcome this problem by following way.
 
 const sum=(num1,num2) => num1+num2;
@@ -100,8 +107,8 @@ console.log(sum(5,4))//passing two no since we require two
 
 //but if we pass only one varibale .ie. sum(5)
 //then num2 will don't have have any value . so it will be 
-// undefine.
-// to overcome this problem we use followin way.
+// undefined.
+// to overcome this problem we use to do code in following manner.
 
 const newsum=(num1,num2)=>{
     if(typeof num1==="undefined"){
@@ -117,7 +124,7 @@ console.log(newsum());//gives 0;
 console.log(newsum(4));//give 4;
 console.log(newsum(4,6));//give 10;
 
-// now when we default value concept;
+// now when default value concept was developed;
 const latestsum=(num1=0,num2=0)=> num1+num2;
 
 console.log(latestsum());//gives 0;
@@ -142,12 +149,16 @@ myfuc(1,2,3);//-> this will work peroperly.
 function newfuc(a,b,...c){//(...c)-> this is called rest paramet.
     //so first tow arguments goes in a,b.
     // and rest all the arguments goes in c in form of array.
-    console.log(`a is ${a}`);
-    console.log(`b is ${b}`);
+    console.log(`a is :${a}`);
+    console.log(`b is :${b}`);
     console.log(`c is :`,c);
     // console.log(`d is ${d}`);
 }
 newfuc(1,2,3,4,5);
+// a is : 1
+// b is : 2
+// c is : [3,4,5]
+
 
 //form a function which can give the sum of all the parameter 
 // in a given function.
@@ -160,9 +171,9 @@ const sumofalltype=(...a)=>{
     return ans;
 }
 let sumall=sumofalltype(1,2,3,4,10);
-console.log(sumall);
+console.log(sumall);// 20.
 
-// parameter destructting.
+// parameter destructuring.
 
 const person={
     name:"sahib",
@@ -205,4 +216,3 @@ const okfun2=(CALLBACK,num1)=>{
 
 // calling of function form inside another function.
 okfun2(okfun1,2);
-    
