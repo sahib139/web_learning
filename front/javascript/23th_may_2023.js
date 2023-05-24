@@ -17,7 +17,7 @@ console.log(hello.ok1);//prints value1.
 console.log(hello);
 
 //we can say that function have free space -> is an empty object which is called the prototype.
-//so we can say that every function have a empty object know as prototype which a single key called constructor.
+//so we can say that every function have a empty object know as prototype with a single key called constructor.
 //this constructor key stores the function defination.
 
 console.log(hello.prototype);//return a object.
@@ -25,29 +25,27 @@ console.log(hello.prototype);//return a object.
 
 hello.prototype.ok2="value2"
 console.log(hello.prototype.ok2);//prints value2.
-//this creates a key:valeu pair in prototype object.
+//this creates a key:value pair in prototype object.
 
-console.log(hello.ok2)//prints value2 as well. -> this don't dont create in prototype object of function.
+console.log(hello.ok2)//don't prints value2 ---> this didn't create in prototype object of function.
 //this create object in function itself by considering function as an object.
 //that's why it give undefined.
 
-console.log(hello.prototype.ok1);
-//this vice verse case of above statement . this also return undefined .
+console.log(hello.prototype.ok1); //This is a vice verse case of above statement . This also return undefined .
 console.log(hello.prototype);
 
 //NOTE -> [[prototype]] && prototype are diffrent thing .
-//[[prototype ]] is __proto__.
+//[[prototype ]] / __proto__. --> same.
 // (((Only function provide this prototype propery .)))
 
 //  IN PREVIOUS FILE WE TRIES TO IMPROVE THE CREATUSER FUNCTION .
-// WE TRY TO FURTHER INPROVE THE THIS FUNCTION BY USING prototype PROPERTY OF THE createuser() fucntion.
+// WE TRY TO FURTHER IMPROVE THIS FUNCTION BY USING prototype PROPERTY OF THE createuser() fucntion.
 
 // earlier we are using the user_method object to save the function which is common to all users.
 // Now we will be using the createuser prototype(object) to save these method .
-// And using __proto__ to find the key which are not present in the created user object , in the createuser protottype object.
+// And using __proto__ to find the key which are not present in the created user object , in the createuser prototype object.
 
-//eailer createuser most modified fucntion from previous file.
-
+//eailer createuser most modified fucntion from previous file-->
 //using this user_method object as __proto__.
 // const user_method={
 //     about:function(){
@@ -60,6 +58,7 @@ console.log(hello.prototype);
 //         return "lalala";
 //     }
 // }
+
 // const createuser_modify2=function(first_name,last_name,email,age ,address){
 //     // const user={};--> we will be changing this.
 //     const user=Object.create(user_method);//now if we call any function ,and we don't decleared in this user object 
@@ -173,7 +172,7 @@ console.log(Object.getPrototypeOf(arr1));//prints the same as --> console.log(Ar
 console.log(Array.prototype);//this prints the the object which contain all the methods of Array function.
 //but we can see that ther object is converted into array.
 
-//i.e. array is prototype is printed which contains all the Array function.
+//i.e. array'S prototype is printed which contains all the Array function.
 // we clear this dobut by knowing that we can convert the object into array.
 
 const hello1=function(){

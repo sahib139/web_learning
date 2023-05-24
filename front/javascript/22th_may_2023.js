@@ -6,7 +6,7 @@ const user1={
     email:"anything@something.find",
     age:1,
     address:"home_house_myhome",
-    about:function(){
+    about(){
         return `${this.first_name} is ${this.age} years old.Email is ${this.email} and address is ${this.address}`;
     },
     is18:function(){
@@ -16,9 +16,9 @@ const user1={
 console.log(user1.about());
 //Asume we have to create 1000 such user like .
 //Then by declearing the above mention way will be very hectic .
-//That's we will be making a function will be returning a object user which takes parameter such as first_name,
+//That's why we will be making a function which will be returning a object user which takes parameter such as first_name,
 //last_name,email,age ,address and return a object corrosponding to each user.
-//so we function that 1)create a object.
+//so we need function that 1)create a object.
 // 2) add key value pair.
 // 3) return the created object .
 
@@ -36,8 +36,7 @@ const createuser=function(first_name,last_name,email,age ,address){
         return this.age >= 18;
     };
     return user;
-}// this is the comman we wanted . using this we can create a new user simply by passing detail of the using as a 
-// parameter.
+}//  using this we can create a new user simply by passing detail to the function. 
 
 const user2=createuser("abc","def","abc@def.co",2,"notok");//get a new object.
 const user3=createuser("hij","pqr","hij@pqr.xyz",2,"okok");
@@ -63,7 +62,7 @@ const user_method={
     }
 }
 
-// now we create a modified createuser function in which we will pass the function reference to each object.
+// now we will be creating a modified createuser function in which we will pass the function reference to each object.
 
 const createuser_modify1=function(first_name,last_name,email,age ,address){
     const user={};

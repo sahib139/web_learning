@@ -23,8 +23,9 @@
 
 // --------> we have created this type of function using property of __proto__ ,prototype, and using new keyword.
 
-// we can write above form in form function in class form.
+// we can write above form function in class form.
 // class is similar to function -> internally class into these function only.
+
 // Advantage of class are we can deleared in the function and prototype in same class block.
 
 // we can create CreateUser fucntion using class in the following manner.
@@ -38,7 +39,7 @@ class Createuser{
         this.age=age;
         this.address=address;
     };
-    //form here we prototype object funtion can be written.
+    //from here prototype object funtion can be written.
     about(){
     return `${this.first_name} is ${this.age} years old.Email is ${this.email} and address is ${this.address}`;
     };
@@ -52,7 +53,7 @@ class Createuser{
         console.log(`The no. we recieved as a parameter is ${a}`);
     }
 }//----> in this way we create a class . This is same as we created above using function.
-//internally this class is converted into fucntion itself.
+//internally this class is converted into function itself.
 
 const user1=new Createuser("Sahib","Singh","ss0990100@gmail.com",21,"not_found");
 console.log(user1); 
@@ -102,22 +103,22 @@ class Dog{
 const dog1=new Dog('lebra',1);
 //As we can see that Dog class is similar to Animal class. So instead of seperatly creating the Dog class we can use 
 //Animal class in Dog class   
-//----> TO do this we can use extends keyword in class 
+//----> TO do this we can use ((((extends)))) keyword in class 
 
 class Dog_new extends Animal{
 
 }//---> in this way we can use other class contructor as well functions.
 const dog2=new Dog_new('pub',2);//here as we can see , we don't decleared any contructor in Dog_new class
 // then also our object is being created.
-// SO if we won't able to able to find any constructor or function in sub_class class then we check in parent class.
+// SO if we won't able to find any constructor or function in sub_class class then we check in parent class.
 // HERE Dog_new----> is called class sub_class
-// AND Animal ----> is class is called parent or basic class or base class.
+// AND Animal ----> is class is called parent or base class.
 console.log(dog2.name);
 
 // now lets create a class Cat which use Animal as parent class.
 class Cat extends Animal{
     constructor(name,age,gender){
-        // since we adding a gender key in our Cat class so we have to create a constructor of Cat itself.
+        // since we are adding a gender key in our Cat class so we have to create a constructor of Cat itself.
         // BUT  (name,age) ---> these key are similar to Animal class. To take the advantage of parent class constructor
         // We use ((super))---> keyword to use constructor of class Animal for (name,age)-> class
         super(name,age);// this uses Animal constructor....
@@ -153,7 +154,7 @@ class Circle{
         const pi=22/7;
         return `The area of circle is ->${this.radius*this.radius*pi}`;
     }
-    get center(){// this get keyword made this center function to access as a key of the object.
+    get center(){// this get keyword made this center function to access as like key:value of the object.
         return `The circle's center is (${this.x},${this.y})`;
     }
     set center(cent){
@@ -178,19 +179,19 @@ console.log(circle1.area());//like this
 console.log(circle1.center);//-----> this is the function of the cicle1 but we are using like key. We achieve this by 
 //using get keyword in front of the function name.
 
-console.log(circle1.change_center(3,3));
+console.log(circle1.change_center(3,3));//created a function to change circle center.
 
 // but if we wanted to use circle -> center to change center as well as we change key in object.
-// like this  ---> circle1.center="1,2";--> this will set 1-->x and 2---> y;
-// To do this we use ((Set)) keyword.
+// like this  ---> circle1.center="1,2";--> this will set x-->1 and y-->2;
+// To do this we use ((set)) keyword.
 circle1.center="1,2";
 console.log(circle1.center);//prints ---> The circle's center is (1,2).
 
 // static method and properties.
 //  since we created many fucntion in our class like in Cirlce class we created center object.
-// To access these function we have to create a object first using these class ; But we cannot se these fucntion on these 
+// To access these function we have to create a object first using their class ; But we cannot use these fucntion on these 
 // class itself.
-// like is we do like this
+// eg->
 // Circle.center()---> this will throw an error.
 
 // To make a function which only class can call ... 
@@ -202,7 +203,7 @@ class Pen{
         this.colour=colour;
         this.price=price;
     }
-    static penInfo(){// using the static keyowrd for declearing a class function only.
+    static penInfo(){// using the static keyword for declearing a class function only.
         return "This is a pen class";
     }
     working_state(){
@@ -213,4 +214,4 @@ const pen1=new Pen("blue",10);
 // console.log(pen1.penInfo());// this will throw an error.
 console.log(Pen.penInfo());//this will work.
 console.log(pen1.working_state());//this will work fine.
-// console.log(pen.working_state());//--> this will throw an error.
+// console.log(Pen.working_state());//--> this will throw an error.
