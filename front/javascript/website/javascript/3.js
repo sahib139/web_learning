@@ -84,7 +84,7 @@ document.querySelector("ol").classList.add("bg-dark")// added a class to it.
 
 //let's add the same li_1 element after the ul element
 to_do.after(li_1);//so li_1 we added to before ul get shifted to after ul element.
-// since it don't copy itself both the places.
+// since it don't clone it's . we have to maually clone it , then use that colne element.
 
 //METHOD 2->>
 //element.insetAdjacentHTML(where,html_code);
@@ -104,3 +104,33 @@ to_do.insertAdjacentHTML("afterend","<li>hello sir4</li>");
 //clone NODES
 
 const ul=document.querySelector(".todo-list");
+const li_1_new=document.createElement("li");
+li_1_new.textContent="I am new!";
+//Now let's append this element to ul;
+ul.append(li_1_new);
+//Now if we prepend this same element, then this li_1_new element which we appended , we be deleted form
+//appended places and this element get prepend (But we wanted to clone(copy) itself at prepend position not move it).
+// For this we need cloning method.
+//We can clone this li_1_new element using
+const li_1_new_clone=li_1_new.cloneNode();//in this way we clone
+console.log(li_1_new_clone);//But we can se that clonening of text node(it's child node) is done.
+// For that we have to do deep clonening . In orther to do so , we have to pass the "true" argument in cloneNode() method.
+const li_1_new_clone_1=li_1_new.cloneNode(true);
+console.log(li_1_new_clone_1);//This is want we wanted .
+// now we can prepend this element
+ul.prepend(li_1_new_clone_1);
+
+//SOME OLD METHODS TO SPPORT POOR INTERNET EXPLORER (AS THESE METHOD (append ,insertAdjacentHTML etc). As these menthod don't work in internet explorer.
+
+//appendcChild;
+// insertBefore;
+//repaceChild;
+// removeChild;
+
+// const ul=document.querySelector(".todo-list"); --> declared earlier
+const l1 =document.createElement("li");
+l1.textContent="poor IE";
+ul.appendChild(l1);// added at the last of the list.
+//Now to use insertbefore we the reference element form which we use before to add the element.
+//so firslty -> let's select all the li element.
+const li_list=document.querySelectorAll(".todo-list ")
