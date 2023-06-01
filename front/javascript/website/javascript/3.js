@@ -116,7 +116,7 @@ const li_1_new_clone=li_1_new.cloneNode();//in this way we clone
 console.log(li_1_new_clone);//But we can se that clonening of text node(it's child node) is done.
 // For that we have to do deep clonening . In orther to do so , we have to pass the "true" argument in cloneNode() method.
 const li_1_new_clone_1=li_1_new.cloneNode(true);
-console.log(li_1_new_clone_1);//This is want we wanted .
+// console.log(li_1_new_clone_1);//This is want we wanted .
 // now we can prepend this element
 ul.prepend(li_1_new_clone_1);
 
@@ -131,6 +131,23 @@ ul.prepend(li_1_new_clone_1);
 const l1 =document.createElement("li");
 l1.textContent="poor IE";
 ul.appendChild(l1);// added at the last of the list.
-//Now to use insertbefore we the reference element form which we use before to add the element.
+
+//Now to use insertbefore we need reference element form which we use insertbefore to add the element.
 //so firslty -> let's select all the li element.
-const li_list=document.querySelectorAll(".todo-list ")
+const li_list=ul.getElementsByTagName("li");//return the list of li tag.
+//Now we wanted to add the element before the li having text hola.
+//so let's find that li element.
+let reference_li;
+for(let lii of li_list){
+    if(lii.outerText=="Hola"){
+        reference_li=lii;
+    }
+}
+console.log(reference_li);//now we wanted to add the new ((l1)) element just before the this reference_li element
+ul.insertBefore(l1,reference_li);//in this way we add the new element before reference element.
+
+//replaceChild --> this will replace the exisiting element with element passed in the argument.
+ul.replaceChild(l1,li_1_new_clone_1);//we replace li_1_new_clone_1 with l1.
+
+//removechild.
+ul.removeChild(reference_li);//removed the referencechild.
