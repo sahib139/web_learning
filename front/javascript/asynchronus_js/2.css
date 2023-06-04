@@ -1,0 +1,30 @@
+*{
+    /* box-sizing: border-box; */
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    height: 100vh;
+    padding: 200px;
+    margin: 150px;
+    text-align: center;
+}
+
+button{
+    align-self: center;
+    font-size: large;
+    height: 150px;
+    width: 400px;
+    font-size: 50px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: darkblue;
+    cursor: pointer;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+button:hover{
+    box-shadow: rgb(3, 3, 3);
+}
